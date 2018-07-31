@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_Extifcon
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2011 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Codnitive_Extifcon>
+			<version>1.7.30</version>
+			<title>Extended ifconfig</title>
+			<link><![CDATA[http://www.codnitive.com/]]></link>
+		</Codnitive_Extifcon>
+	</modules>
+	<global>
+		<models>
+			<core>
+				<rewrite>
+					<layout>Codnitive_Extifcon_Model_Core_Layout</layout>
+				</rewrite>
+			</core>
+			<extifcon>
+				<class>Codnitive_Extifcon_Model</class>
+			</extifcon>
+		</models>
+		<helpers>
+			<extifcon>
+				<class>Codnitive_Extifcon_Helper</class>
+			</extifcon>
+		</helpers>
+		<resources>
+			<extifcon_setup>
+				<setup>
+					<module>Codnitive_Extifcon</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</extifcon_setup>
+			<extifcon_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</extifcon_write>
+			<extifcon_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</extifcon_read>
+		</resources>
+		<!--<blocks>
+				<extifcon>
+						<class>Codnitive_Extifcon_Block</class>
+				</extifcon>
+		</blocks>-->
+	</global>
+
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<codnitiveadvance>
+											<title>CODNITIVE Developer</title>
+										</codnitiveadvance>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+
+		<translate>
+			<modules>
+				<Codnitive_Extifcon>
+					<files>
+						<default>Codnitive_Extifcon.csv</default>
+					</files>
+				</Codnitive_Extifcon>
+			</modules>
+		</translate>
+	</adminhtml>
+</config>
